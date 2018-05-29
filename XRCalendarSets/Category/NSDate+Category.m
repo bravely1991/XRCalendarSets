@@ -10,16 +10,23 @@
 
 @implementation NSDate (Category)
 
-- (NSDate *)nextDay:(NSInteger)day {
-    NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
-    calendar.firstWeekday = 1;
+//- (NSDate *)nextDay:(NSInteger)day {
+//    NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+//    calendar.firstWeekday = 1;
+//
+//    NSDateComponents *adcomps = [[NSDateComponents alloc] init];
+//    adcomps = [calendar components:kCFCalendarUnitYear |kCFCalendarUnitMonth | NSCalendarUnitDay fromDate:self];
+//    [adcomps setYear:0];
+//    [adcomps setMonth:0];
+//    [adcomps setDay:day];
+//    return [calendar dateByAddingComponents:adcomps toDate:self options:NSCalendarWrapComponents];
+//}
 
-    NSDateComponents *adcomps = [[NSDateComponents alloc] init];
-    adcomps = [calendar components:kCFCalendarUnitYear |kCFCalendarUnitMonth | NSCalendarUnitDay fromDate:self];
-    [adcomps setYear:0];
-    [adcomps setMonth:0];
-    [adcomps setDay:day];
-    return [calendar dateByAddingComponents:adcomps toDate:self options:NSCalendarWrapComponents];
+- (NSDate *)nextDay:(NSInteger)day {
+    NSTimeInterval daySecond = 60*60*24*day;
+    NSDate *newDate = [self initWithTimeInterval:daySecond sinceDate:self];
+//        NSDateComponents *Components = [calendar components:calendarUnit fromDate:theDate];
+    return newDate;
 }
 
 + (NSDate *)firstDayInfoOfWeek {
