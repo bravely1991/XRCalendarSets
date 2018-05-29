@@ -10,6 +10,9 @@
 
 @interface NSDate (Category)
 
++ (NSDate *)firstDayInfoOfWeek;
 - (NSDate *)nextDay:(NSInteger)day;
+
+- (NSString *)month;
 - (NSString *)day;
 @end

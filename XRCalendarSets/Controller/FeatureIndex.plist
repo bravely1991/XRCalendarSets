@@ -12,7 +12,7 @@
 		<key>featureName</key>
 		<string>星期查看</string>
 		<key>featureClass</key>
-		<string></string>
+		<string>XRCalendarWeekViewController</string>
 	</dict>
 </array>
 </plist>

@@ -1,36 +1,30 @@
 //
-//  XRCanlendarPickerViewController.m
+//  XRCalendarWeekViewController.m
 //  XRCalendarSets
 //
 //  Created by 邵勇 on 2018/5/29.
 //  Copyright © 2018年 brave. All rights reserved.
 //
 
-#import "XRCanlendarPickerViewController.h"
-#import "XRCalendarPicker.h"
+#import "XRCalendarWeekViewController.h"
+#import "XRCalendarView.h"
 
-@interface XRCanlendarPickerViewController ()
+@interface XRCalendarWeekViewController ()
 
-@property (nonatomic, strong) XRCalendarPicker *calendar;
+@property (nonatomic, strong) XRCalendarView *calendarWeekView;
 
 @end
 
-@implementation XRCanlendarPickerViewController
+@implementation XRCalendarWeekViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-
-    self.calendar = [[XRCalendarPicker alloc] initWithFrame:CGRectMake(0, 0, 320, 350)];
-    self.calendar.center = self.view.center;
-    self.calendar.today = [NSDate date];
-    self.calendar.date = [NSDate date];
-    [self.view addSubview:self.calendar];
     
-    [self.calendar setDidSelectedDate:^(NSString *strDate) {
-        NSLog(@"strDate:%@",strDate);
-    }];
+    self.calendarWeekView = [XRCalendarView calendarView];
+    self.calendarWeekView.center = self.view.center;
+    [self.view addSubview:self.calendarWeekView];
 }
 
 - (void)didReceiveMemoryWarning {
