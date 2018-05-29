@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1BC4174D20BCF4C400EFAAE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4174C20BCF4C400EFAAE4 /* AppDelegate.m */; };
+		1BC4175020BCF4C400EFAAE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4174F20BCF4C400EFAAE4 /* ViewController.m */; };
+		1BC4175320BCF4C400EFAAE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4175120BCF4C400EFAAE4 /* Main.storyboard */; };
+		1BC4175520BCF4C500EFAAE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4175420BCF4C500EFAAE4 /* Assets.xcassets */; };
+		1BC4175820BCF4C500EFAAE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4175620BCF4C500EFAAE4 /* LaunchScreen.storyboard */; };
+		1BC4175B20BCF4C500EFAAE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4175A20BCF4C500EFAAE4 /* main.m */; };
+		1BC4178220BCF54800EFAAE4 /* XRFeatureIndexModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4178020BCF54800EFAAE4 /* XRFeatureIndexModel.m */; };
+		1BC4178520BCF55500EFAAE4 /* XRFeatureIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4178420BCF55500EFAAE4 /* XRFeatureIndexViewController.m */; };
+		1BC4178920BCF7CC00EFAAE4 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4178820BCF7CC00EFAAE4 /* NSDate+Category.m */; };
+		1BC417A520BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4178D20BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		1BC417A620BCF7F100EFAAE4 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4179620BCF7F100EFAAE4 /* ViewController+MASAdditions.m */; };
+		1BC417A720BCF7F100EFAAE4 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4179A20BCF7F100EFAAE4 /* MASCompositeConstraint.m */; };
+		1BC417A820BCF7F100EFAAE4 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4179B20BCF7F100EFAAE4 /* MASConstraintMaker.m */; };
+		1BC417A920BCF7F100EFAAE4 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4179C20BCF7F100EFAAE4 /* MASLayoutConstraint.m */; };
+		1BC417AA20BCF7F100EFAAE4 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4179D20BCF7F100EFAAE4 /* NSArray+MASAdditions.m */; };
+		1BC417AB20BCF7F100EFAAE4 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4179E20BCF7F100EFAAE4 /* View+MASAdditions.m */; };
+		1BC417AC20BCF7F100EFAAE4 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417A120BCF7F100EFAAE4 /* MASConstraint.m */; };
+		1BC417AD20BCF7F100EFAAE4 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417A320BCF7F100EFAAE4 /* MASViewConstraint.m */; };
+		1BC417AE20BCF7F100EFAAE4 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417A420BCF7F100EFAAE4 /* MASViewAttribute.m */; };
+		1BC417B020BCF92000EFAAE4 /* FeatureIndex.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BC417AF20BCF92000EFAAE4 /* FeatureIndex.plist */; };
+		1BC417B820BCF94B00EFAAE4 /* XRCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417B220BCF94B00EFAAE4 /* XRCalendarCell.m */; };
+		1BC417B920BCF94B00EFAAE4 /* XRCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417B620BCF94B00EFAAE4 /* XRCalendarHeaderView.m */; };
+		1BC417BA20BCF94B00EFAAE4 /* XRCalendarPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417B720BCF94B00EFAAE4 /* XRCalendarPicker.m */; };
+		1BC417BD20BCF9C500EFAAE4 /* XRCanlendarPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417BC20BCF9C500EFAAE4 /* XRCanlendarPickerViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BC4176120BCF4C500EFAAE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BC4174020BCF4C400EFAAE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BC4174720BCF4C400EFAAE4;
+			remoteInfo = XRCalendarSets;
+		};
+		1BC4176C20BCF4C500EFAAE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BC4174020BCF4C400EFAAE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BC4174720BCF4C400EFAAE4;
+			remoteInfo = XRCalendarSets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1BC4174820BCF4C400EFAAE4 /* XRCalendarSets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XRCalendarSets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BC4174B20BCF4C400EFAAE4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1BC4174C20BCF4C400EFAAE4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1BC4174E20BCF4C400EFAAE4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1BC4174F20BCF4C400EFAAE4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1BC4175220BCF4C400EFAAE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1BC4175420BCF4C500EFAAE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BC4175720BCF4C500EFAAE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1BC4175920BCF4C500EFAAE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BC4175A20BCF4C500EFAAE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1BC4176020BCF4C500EFAAE4 /* XRCalendarSetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XRCalendarSetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BC4176B20BCF4C500EFAAE4 /* XRCalendarSetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XRCalendarSetsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BC4178020BCF54800EFAAE4 /* XRFeatureIndexModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRFeatureIndexModel.m; sourceTree = "<group>"; };
+		1BC4178120BCF54800EFAAE4 /* XRFeatureIndexModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRFeatureIndexModel.h; sourceTree = "<group>"; };
+		1BC4178320BCF55500EFAAE4 /* XRFeatureIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRFeatureIndexViewController.h; sourceTree = "<group>"; };
+		1BC4178420BCF55500EFAAE4 /* XRFeatureIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRFeatureIndexViewController.m; sourceTree = "<group>"; };
+		1BC4178720BCF7CC00EFAAE4 /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
+		1BC4178820BCF7CC00EFAAE4 /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
+		1BC4178C20BCF7F100EFAAE4 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		1BC4178D20BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		1BC4178E20BCF7F100EFAAE4 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		1BC4178F20BCF7F100EFAAE4 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		1BC4179020BCF7F100EFAAE4 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		1BC4179120BCF7F100EFAAE4 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		1BC4179220BCF7F100EFAAE4 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		1BC4179320BCF7F100EFAAE4 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		1BC4179420BCF7F100EFAAE4 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		1BC4179520BCF7F100EFAAE4 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		1BC4179620BCF7F100EFAAE4 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		1BC4179720BCF7F100EFAAE4 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		1BC4179820BCF7F100EFAAE4 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		1BC4179920BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		1BC4179A20BCF7F100EFAAE4 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		1BC4179B20BCF7F100EFAAE4 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		1BC4179C20BCF7F100EFAAE4 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		1BC4179D20BCF7F100EFAAE4 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		1BC4179E20BCF7F100EFAAE4 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		1BC4179F20BCF7F100EFAAE4 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		1BC417A020BCF7F100EFAAE4 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		1BC417A120BCF7F100EFAAE4 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		1BC417A220BCF7F100EFAAE4 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		1BC417A320BCF7F100EFAAE4 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		1BC417A420BCF7F100EFAAE4 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		1BC417AF20BCF92000EFAAE4 /* FeatureIndex.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FeatureIndex.plist; sourceTree = "<group>"; };
+		1BC417B220BCF94B00EFAAE4 /* XRCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRCalendarCell.m; sourceTree = "<group>"; };
+		1BC417B320BCF94B00EFAAE4 /* XRCalendarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRCalendarPicker.h; sourceTree = "<group>"; };
+		1BC417B420BCF94B00EFAAE4 /* XRCalendarHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRCalendarHeaderView.h; sourceTree = "<group>"; };
+		1BC417B520BCF94B00EFAAE4 /* XRCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRCalendarCell.h; sourceTree = "<group>"; };
+		1BC417B620BCF94B00EFAAE4 /* XRCalendarHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRCalendarHeaderView.m; sourceTree = "<group>"; };
+		1BC417B720BCF94B00EFAAE4 /* XRCalendarPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRCalendarPicker.m; sourceTree = "<group>"; };
+		1BC417BB20BCF9C500EFAAE4 /* XRCanlendarPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRCanlendarPickerViewController.h; sourceTree = "<group>"; };
+		1BC417BC20BCF9C500EFAAE4 /* XRCanlendarPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRCanlendarPickerViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BC4174520BCF4C400EFAAE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BC4175D20BCF4C500EFAAE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BC4176820BCF4C500EFAAE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BC4173F20BCF4C400EFAAE4 = {
+			isa = PBXGroup;
+			children = (
+				1BC4174A20BCF4C400EFAAE4 /* XRCalendarSets */,
+				1BC4174920BCF4C400EFAAE4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1BC4174920BCF4C400EFAAE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4174820BCF4C400EFAAE4 /* XRCalendarSets.app */,
+				1BC4176020BCF4C500EFAAE4 /* XRCalendarSetsTests.xctest */,
+				1BC4176B20BCF4C500EFAAE4 /* XRCalendarSetsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BC4174A20BCF4C400EFAAE4 /* XRCalendarSets */ = {
+			isa = PBXGroup;
+			children = (
+				1BC417B120BCF94B00EFAAE4 /* XRCalendarPicker */,
+				1BC4178A20BCF7F100EFAAE4 /* Vender */,
+				1BC4178620BCF7B900EFAAE4 /* Category */,
+				1BC4177E20BCF53700EFAAE4 /* Model */,
+				1BC4177F20BCF53700EFAAE4 /* View */,
+				1BC4177D20BCF51400EFAAE4 /* Controller */,
+				1BC4174B20BCF4C400EFAAE4 /* AppDelegate.h */,
+				1BC4174C20BCF4C400EFAAE4 /* AppDelegate.m */,
+				1BC4174E20BCF4C400EFAAE4 /* ViewController.h */,
+				1BC4174F20BCF4C400EFAAE4 /* ViewController.m */,
+				1BC4175120BCF4C400EFAAE4 /* Main.storyboard */,
+				1BC4175420BCF4C500EFAAE4 /* Assets.xcassets */,
+				1BC4175620BCF4C500EFAAE4 /* LaunchScreen.storyboard */,
+				1BC4175920BCF4C500EFAAE4 /* Info.plist */,
+				1BC4175A20BCF4C500EFAAE4 /* main.m */,
+			);
+			path = XRCalendarSets;
+			sourceTree = "<group>";
+		};
+		1BC4177D20BCF51400EFAAE4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BC417AF20BCF92000EFAAE4 /* FeatureIndex.plist */,
+				1BC4178320BCF55500EFAAE4 /* XRFeatureIndexViewController.h */,
+				1BC4178420BCF55500EFAAE4 /* XRFeatureIndexViewController.m */,
+				1BC417BB20BCF9C500EFAAE4 /* XRCanlendarPickerViewController.h */,
+				1BC417BC20BCF9C500EFAAE4 /* XRCanlendarPickerViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1BC4177E20BCF53700EFAAE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4178120BCF54800EFAAE4 /* XRFeatureIndexModel.h */,
+				1BC4178020BCF54800EFAAE4 /* XRFeatureIndexModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1BC4177F20BCF53700EFAAE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1BC4178620BCF7B900EFAAE4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4178720BCF7CC00EFAAE4 /* NSDate+Category.h */,
+				1BC4178820BCF7CC00EFAAE4 /* NSDate+Category.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1BC4178A20BCF7F100EFAAE4 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4178B20BCF7F100EFAAE4 /* Masonry */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		1BC4178B20BCF7F100EFAAE4 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4178C20BCF7F100EFAAE4 /* MASCompositeConstraint.h */,
+				1BC4178D20BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				1BC4178E20BCF7F100EFAAE4 /* MASConstraint+Private.h */,
+				1BC4178F20BCF7F100EFAAE4 /* MASLayoutConstraint.h */,
+				1BC4179020BCF7F100EFAAE4 /* NSArray+MASShorthandAdditions.h */,
+				1BC4179120BCF7F100EFAAE4 /* MASConstraintMaker.h */,
+				1BC4179220BCF7F100EFAAE4 /* View+MASAdditions.h */,
+				1BC4179320BCF7F100EFAAE4 /* NSArray+MASAdditions.h */,
+				1BC4179420BCF7F100EFAAE4 /* MASUtilities.h */,
+				1BC4179520BCF7F100EFAAE4 /* MASViewAttribute.h */,
+				1BC4179620BCF7F100EFAAE4 /* ViewController+MASAdditions.m */,
+				1BC4179720BCF7F100EFAAE4 /* MASViewConstraint.h */,
+				1BC4179820BCF7F100EFAAE4 /* MASConstraint.h */,
+				1BC4179920BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				1BC4179A20BCF7F100EFAAE4 /* MASCompositeConstraint.m */,
+				1BC4179B20BCF7F100EFAAE4 /* MASConstraintMaker.m */,
+				1BC4179C20BCF7F100EFAAE4 /* MASLayoutConstraint.m */,
+				1BC4179D20BCF7F100EFAAE4 /* NSArray+MASAdditions.m */,
+				1BC4179E20BCF7F100EFAAE4 /* View+MASAdditions.m */,
+				1BC4179F20BCF7F100EFAAE4 /* View+MASShorthandAdditions.h */,
+				1BC417A020BCF7F100EFAAE4 /* Masonry.h */,
+				1BC417A120BCF7F100EFAAE4 /* MASConstraint.m */,
+				1BC417A220BCF7F100EFAAE4 /* ViewController+MASAdditions.h */,
+				1BC417A320BCF7F100EFAAE4 /* MASViewConstraint.m */,
+				1BC417A420BCF7F100EFAAE4 /* MASViewAttribute.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		1BC417B120BCF94B00EFAAE4 /* XRCalendarPicker */ = {
+			isa = PBXGroup;
+			children = (
+				1BC417B520BCF94B00EFAAE4 /* XRCalendarCell.h */,
+				1BC417B220BCF94B00EFAAE4 /* XRCalendarCell.m */,
+				1BC417B320BCF94B00EFAAE4 /* XRCalendarPicker.h */,
+				1BC417B720BCF94B00EFAAE4 /* XRCalendarPicker.m */,
+				1BC417B420BCF94B00EFAAE4 /* XRCalendarHeaderView.h */,
+				1BC417B620BCF94B00EFAAE4 /* XRCalendarHeaderView.m */,
+			);
+			path = XRCalendarPicker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1BC4174720BCF4C400EFAAE4 /* XRCalendarSets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BC4177420BCF4C500EFAAE4 /* Build configuration list for PBXNativeTarget "XRCalendarSets" */;
+			buildPhases = (
+				1BC4174420BCF4C400EFAAE4 /* Sources */,
+				1BC4174520BCF4C400EFAAE4 /* Frameworks */,
+				1BC4174620BCF4C400EFAAE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XRCalendarSets;
+			productName = XRCalendarSets;
+			productReference = 1BC4174820BCF4C400EFAAE4 /* XRCalendarSets.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1BC4175F20BCF4C500EFAAE4 /* XRCalendarSetsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BC4177720BCF4C500EFAAE4 /* Build configuration list for PBXNativeTarget "XRCalendarSetsTests" */;
+			buildPhases = (
+				1BC4175C20BCF4C500EFAAE4 /* Sources */,
+				1BC4175D20BCF4C500EFAAE4 /* Frameworks */,
+				1BC4175E20BCF4C500EFAAE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BC4176220BCF4C500EFAAE4 /* PBXTargetDependency */,
+			);
+			name = XRCalendarSetsTests;
+			productName = XRCalendarSetsTests;
+			productReference = 1BC4176020BCF4C500EFAAE4 /* XRCalendarSetsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1BC4176A20BCF4C500EFAAE4 /* XRCalendarSetsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BC4177A20BCF4C500EFAAE4 /* Build configuration list for PBXNativeTarget "XRCalendarSetsUITests" */;
+			buildPhases = (
+				1BC4176720BCF4C500EFAAE4 /* Sources */,
+				1BC4176820BCF4C500EFAAE4 /* Frameworks */,
+				1BC4176920BCF4C500EFAAE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BC4176D20BCF4C500EFAAE4 /* PBXTargetDependency */,
+			);
+			name = XRCalendarSetsUITests;
+			productName = XRCalendarSetsUITests;
+			productReference = 1BC4176B20BCF4C500EFAAE4 /* XRCalendarSetsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BC4174020BCF4C400EFAAE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = brave;
+				TargetAttributes = {
+					1BC4174720BCF4C400EFAAE4 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					1BC4175F20BCF4C500EFAAE4 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 1BC4174720BCF4C400EFAAE4;
+					};
+					1BC4176A20BCF4C500EFAAE4 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 1BC4174720BCF4C400EFAAE4;
+					};
+				};
+			};
+			buildConfigurationList = 1BC4174320BCF4C400EFAAE4 /* Build configuration list for PBXProject "XRCalendarSets" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1BC4173F20BCF4C400EFAAE4;
+			productRefGroup = 1BC4174920BCF4C400EFAAE4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BC4174720BCF4C400EFAAE4 /* XRCalendarSets */,
+				1BC4175F20BCF4C500EFAAE4 /* XRCalendarSetsTests */,
+				1BC4176A20BCF4C500EFAAE4 /* XRCalendarSetsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BC4174620BCF4C400EFAAE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BC417B020BCF92000EFAAE4 /* FeatureIndex.plist in Resources */,
+				1BC4175820BCF4C500EFAAE4 /* LaunchScreen.storyboard in Resources */,
+				1BC4175520BCF4C500EFAAE4 /* Assets.xcassets in Resources */,
+				1BC4175320BCF4C400EFAAE4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BC4175E20BCF4C500EFAAE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BC4176920BCF4C500EFAAE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BC4174420BCF4C400EFAAE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BC417BA20BCF94B00EFAAE4 /* XRCalendarPicker.m in Sources */,
+				1BC417AD20BCF7F100EFAAE4 /* MASViewConstraint.m in Sources */,
+				1BC4175020BCF4C400EFAAE4 /* ViewController.m in Sources */,
+				1BC417A820BCF7F100EFAAE4 /* MASConstraintMaker.m in Sources */,
+				1BC417B920BCF94B00EFAAE4 /* XRCalendarHeaderView.m in Sources */,
+				1BC4178520BCF55500EFAAE4 /* XRFeatureIndexViewController.m in Sources */,
+				1BC417A620BCF7F100EFAAE4 /* ViewController+MASAdditions.m in Sources */,
+				1BC417A520BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				1BC417A720BCF7F100EFAAE4 /* MASCompositeConstraint.m in Sources */,
+				1BC4178920BCF7CC00EFAAE4 /* NSDate+Category.m in Sources */,
+				1BC417B820BCF94B00EFAAE4 /* XRCalendarCell.m in Sources */,
+				1BC417A920BCF7F100EFAAE4 /* MASLayoutConstraint.m in Sources */,
+				1BC417AB20BCF7F100EFAAE4 /* View+MASAdditions.m in Sources */,
+				1BC417AA20BCF7F100EFAAE4 /* NSArray+MASAdditions.m in Sources */,
+				1BC4175B20BCF4C500EFAAE4 /* main.m in Sources */,
+				1BC4174D20BCF4C400EFAAE4 /* AppDelegate.m in Sources */,
+				1BC417AE20BCF7F100EFAAE4 /* MASViewAttribute.m in Sources */,
+				1BC417BD20BCF9C500EFAAE4 /* XRCanlendarPickerViewController.m in Sources */,
+				1BC417AC20BCF7F100EFAAE4 /* MASConstraint.m in Sources */,
+				1BC4178220BCF54800EFAAE4 /* XRFeatureIndexModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BC4175C20BCF4C500EFAAE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BC4176720BCF4C500EFAAE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BC4176220BCF4C500EFAAE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BC4174720BCF4C400EFAAE4 /* XRCalendarSets */;
+			targetProxy = 1BC4176120BCF4C500EFAAE4 /* PBXContainerItemProxy */;
+		};
+		1BC4176D20BCF4C500EFAAE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BC4174720BCF4C400EFAAE4 /* XRCalendarSets */;
+			targetProxy = 1BC4176C20BCF4C500EFAAE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1BC4175120BCF4C400EFAAE4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BC4175220BCF4C400EFAAE4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1BC4175620BCF4C500EFAAE4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BC4175720BCF4C500EFAAE4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1BC4177220BCF4C500EFAAE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1BC4177320BCF4C500EFAAE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BC4177520BCF4C500EFAAE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2M39C6VA5B;
+				INFOPLIST_FILE = XRCalendarSets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bravely1991.XRCalendarSets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1BC4177620BCF4C500EFAAE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2M39C6VA5B;
+				INFOPLIST_FILE = XRCalendarSets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bravely1991.XRCalendarSets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		1BC4177820BCF4C500EFAAE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2M39C6VA5B;
+				INFOPLIST_FILE = XRCalendarSetsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bravely1991.XRCalendarSetsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XRCalendarSets.app/XRCalendarSets";
+			};
+			name = Debug;
+		};
+		1BC4177920BCF4C500EFAAE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2M39C6VA5B;
+				INFOPLIST_FILE = XRCalendarSetsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bravely1991.XRCalendarSetsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XRCalendarSets.app/XRCalendarSets";
+			};
+			name = Release;
+		};
+		1BC4177B20BCF4C500EFAAE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2M39C6VA5B;
+				INFOPLIST_FILE = XRCalendarSetsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bravely1991.XRCalendarSetsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = XRCalendarSets;
+			};
+			name = Debug;
+		};
+		1BC4177C20BCF4C500EFAAE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2M39C6VA5B;
+				INFOPLIST_FILE = XRCalendarSetsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bravely1991.XRCalendarSetsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = XRCalendarSets;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BC4174320BCF4C400EFAAE4 /* Build configuration list for PBXProject "XRCalendarSets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BC4177220BCF4C500EFAAE4 /* Debug */,
+				1BC4177320BCF4C500EFAAE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BC4177420BCF4C500EFAAE4 /* Build configuration list for PBXNativeTarget "XRCalendarSets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BC4177520BCF4C500EFAAE4 /* Debug */,
+				1BC4177620BCF4C500EFAAE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BC4177720BCF4C500EFAAE4 /* Build configuration list for PBXNativeTarget "XRCalendarSetsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BC4177820BCF4C500EFAAE4 /* Debug */,
+				1BC4177920BCF4C500EFAAE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BC4177A20BCF4C500EFAAE4 /* Build configuration list for PBXNativeTarget "XRCalendarSetsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BC4177B20BCF4C500EFAAE4 /* Debug */,
+				1BC4177C20BCF4C500EFAAE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1BC4174020BCF4C400EFAAE4 /* Project object */;
+}

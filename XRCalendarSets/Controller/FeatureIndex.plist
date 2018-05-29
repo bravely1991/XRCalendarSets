@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>featureName</key>
+		<string>日历选择器</string>
+		<key>featureClass</key>
+		<string>XRCanlendarPickerViewController</string>
+	</dict>
+	<dict>
+		<key>featureName</key>
+		<string>星期查看</string>
+		<key>featureClass</key>
+		<string></string>
+	</dict>
+</array>
+</plist>
