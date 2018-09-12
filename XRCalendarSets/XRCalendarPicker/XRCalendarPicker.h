@@ -8,14 +8,29 @@
 
 #import <UIKit/UIKit.h>
 
+#import "XRCalendarPickStyle.h"
+
+@class XRCalendarPicker;
+
+@protocol XRCalendarPickerDelegate <NSObject>
+
+@optional
+- (XRCalendarExchangeType)calendarPicker:(XRCalendarPicker *)picker exchangeTypeWithDate:(NSDate *)date;
+- (XRCalendarItemState)calendarPicker:(XRCalendarPicker *)picker itemStateWithDate:(NSDate *)date;
+- (NSString *)calendarPicker:(XRCalendarPicker *)picker festivalWithDate:(NSDate *)date;
+
+@end
+
 @interface XRCalendarPicker : UIView
 
-@property (nonatomic, strong) NSDate *date;
-@property (nonatomic, strong) NSDate *today;
+@property (nonatomic, copy) void (^didSelectedDate)(NSDate *selectedDate);
+
+@property (nonatomic, strong) NSDate *selectedDate;
+
+@property (nonatomic, strong) XRCalendarPickStyle *style;
+
+@property (nonatomic, weak) id delegate;
 
 - (void)reloadData;
-
-@property (nonatomic, copy) void (^didSelectedDate)(NSString *strDate);
-
 
 @end

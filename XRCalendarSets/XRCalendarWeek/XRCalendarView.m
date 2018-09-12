@@ -78,25 +78,25 @@
 - (void)getWeekData {
     self.firstDayOfWeek = [NSDate firstDayInfoOfWeek];
     NSLog(@"first day:%@",self.firstDayOfWeek);
-    self.month = [self.firstDayOfWeek month];
+    self.month = [self.firstDayOfWeek monthStringWithFormat:@"MM月"];
     
     self.weekDayArray = [NSMutableArray array];
     for (NSInteger i=0; i<7; i++) {
         NSDate *date = [self.firstDayOfWeek nextDay:i];
-        NSString *day =  [date day];
+        NSString *day =  [date dayStringWithFormat:@"dd"];
         [self.weekDayArray addObject:day];
     }
 }
 
 - (void)reloadData {
-    self.month = [self.firstDayOfWeek month];
+    self.month = [self.firstDayOfWeek monthStringWithFormat:@"MM月"];
     
     NSLog(@"%@,%@",self.month, self.firstDayOfWeek);
     
     self.weekDayArray = [NSMutableArray array];
     for (NSInteger i=0; i<7; i++) {
         NSDate *date = [self.firstDayOfWeek nextDay:i];
-        NSString *day =  [date day];
+        NSString *day =  [date dayStringWithFormat:@"dd"];
         [self.weekDayArray addObject:day];
     }
     

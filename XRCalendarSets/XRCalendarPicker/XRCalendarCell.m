@@ -9,8 +9,15 @@
 #import "XRCalendarCell.h"
 #import "Masonry.h"
 
+#import "NSDate+Category.h"
+
 @interface XRCalendarCell ()
 
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *festivalLabel;
+@property (nonatomic, strong) UILabel *exchangeLabel;
+
+@property (nonatomic, strong) UIImageView *disableImageView;
 
 @end
 
@@ -25,33 +32,104 @@
 
 
 - (void)loadSubViews {
-    self.titleBtn = [[UIButton alloc] init];
-    self.titleBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-    self.titleBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.titleBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
-    [self.titleBtn setTitleColor:[UIColor lightTextColor] forState:UIControlStateDisabled];
-    [self.titleBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-    [self.titleBtn setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
-    self.titleBtn.userInteractionEnabled = NO;
-    [self.contentView addSubview:self.titleBtn];
+    self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.contentView addSubview:self.titleLabel];
+    
+    self.festivalLabel = [[UILabel alloc] init];
+    self.festivalLabel.textAlignment = NSTextAlignmentCenter;
+    [self.contentView addSubview:self.festivalLabel];
+    
+    self.exchangeLabel = [[UILabel alloc] init];
+    [self.contentView addSubview:self.exchangeLabel];
+    
+    self.disableImageView = [[UIImageView alloc] init];
+    self.disableImageView.hidden = YES;
+    self.disableImageView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+    [self.contentView addSubview:self.disableImageView];
 }
 
-- (void)setText:(NSString *)text {
-    _text = text;
-    [self.titleBtn setTitle:text forState:UIControlStateNormal];
+- (void)setDate:(NSDate *)date {
+    _date = date;
+
+    self.titleLabel.text = date ? [NSString stringWithFormat:@"%ld", date.day] : @"";
+    self.titleLabel.font = self.style.dateFont;
+    self.disableImageView.hidden = self.state != XRCalendarItemDisableState;
+    
+    self.contentView.backgroundColor = self.state == XRCalendarItemSelectedState ? self.style.selectedBgColor : self.style.normalBgColor;
+    
+    if (self.style.showToday && [date isToday]) {
+        self.titleLabel.text = @"今天";
+        self.titleLabel.font = self.style.todayFont;
+        self.titleLabel.textColor = self.state == XRCalendarItemSelectedState ? self.style.dateSelectedColor : self.style.todayColor;
+    } else {
+        self.titleLabel.textColor = self.state == XRCalendarItemSelectedState ? self.style.dateSelectedColor : self.style.dateNormalColor;
+    }
+    
+    if (![date isWorkDay]) {
+        self.titleLabel.textColor = self.state == XRCalendarItemSelectedState ? self.style.dateSelectedColor : self.style.dateWeekColor;
+    }
 }
 
+- (void)setFestivalText:(NSString *)festivalText {
+    _festivalText = [festivalText copy];
+    self.festivalLabel.text = festivalText;
+    
+    self.festivalLabel.textColor = self.state == XRCalendarItemSelectedState ? self.style.festivalSelectedColor : self.style.festivalNormalColor;
+    self.festivalLabel.font = self.style.festivalFont;
+}
 
-- (void)setSelected:(BOOL)selected {
-    [super setSelected:selected];
-    self.titleBtn.selected = selected;
+- (void)setExchangeType:(XRCalendarExchangeType)exchangeType {
+    _exchangeType = exchangeType;
+    
+    switch (exchangeType) {
+        case XRCalendarExchangeNoneType:
+        {
+            self.exchangeLabel.text = @"";
+        }
+            break;
+        case XRCalendarExchangeRestType:
+        {
+            self.exchangeLabel.textColor = self.style.exchangeRestColor;
+            self.exchangeLabel.text = @"休";
+        }
+            break;
+        case XRCalendarExchangeWorkType:
+        {
+            self.exchangeLabel.textColor = self.style.exchangeWorkColor;
+            self.exchangeLabel.text = @"班";
+        }
+            break;
+        default:
+            break;
+    }
+    
+    self.exchangeLabel.font = self.style.exchangeFont;
+    if (self.state == XRCalendarItemSelectedState) {
+        self.exchangeLabel.textColor = self.style.exchangeSelectedColor;
+    }
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self.titleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.equalTo(@0);
+    [self.exchangeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.right.offset(0);
+        make.height.width.equalTo(@15);
+    }];
+    
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.exchangeLabel.mas_bottom);
+        make.left.right.offset(0);
+    }];
+    
+    [self.festivalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(3);
+    }];
+    
+    [self.disableImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.offset(0);
     }];
 }
 

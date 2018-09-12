@@ -10,10 +10,15 @@
 #import "XRCalendarHeaderView.h"
 #import "XRCalendarCell.h"
 
+#import "NSDate+Category.h"
 
 @interface XRCalendarPicker ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
+
+@property (nonatomic, strong) UICollectionViewFlowLayout *layout;
+
+@property (nonatomic, strong) NSDate *date;
 
 @end
 
@@ -23,6 +28,9 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor lightTextColor];
+        self.date = [NSDate date];
+        self.selectedDate = self.date;
+        self.style = [[XRCalendarPickStyle alloc] init];
         [self loadSubViews];
     }
     return self;
@@ -31,22 +39,23 @@
 - (void)loadSubViews {
     
     CGFloat itemWidth = self.bounds.size.width / 7;
-    CGFloat itemHeight = (self.bounds.size.height-60) / 5;
+    CGFloat itemHeight = (self.bounds.size.height-self.style.headerHeight) / 6;
     
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    self.layout = [[UICollectionViewFlowLayout alloc] init];
+    [self.layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+
+    self.layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    self.layout.minimumLineSpacing = 0;
+    self.layout.minimumInteritemSpacing = 0;
+    self.layout.headerReferenceSize = CGSizeMake(self.bounds.size.width, self.style.headerHeight);
     
-    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
-    layout.minimumLineSpacing = 0;
-    layout.minimumInteritemSpacing = 0;
-    layout.headerReferenceSize = CGSizeMake(self.bounds.size.width, 60);
-    
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
-    self.collectionView.backgroundColor = [UIColor yellowColor];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:self.layout];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.collectionView.allowsSelection = YES;
     self.collectionView.allowsMultipleSelection = NO;
+    self.collectionView.showsVerticalScrollIndicator = NO;
     [self.collectionView registerClass:[XRCalendarCell class]forCellWithReuseIdentifier:@"XRCalendarCell"];
     [self.collectionView registerClass:[XRCalendarHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"XRCalendarHeaderView"];
     [self addSubview:self.collectionView];
@@ -74,80 +83,36 @@
     [self.collectionView reloadData];
 }
 
+- (void)setStyle:(XRCalendarPickStyle *)style {
+    _style = style;
+    
+    CGFloat itemWidth = self.bounds.size.width / 7;
+    CGFloat itemHeight = (self.bounds.size.height - self.style.headerHeight) / 6;
+    self.layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    self.layout.headerReferenceSize = CGSizeMake(self.bounds.size.width, self.style.headerHeight);
+}
+
+#pragma mark - 翻页
 - (void)previouseAction {
     [UIView transitionWithView:self duration:0.5 options:UIViewAnimationOptionTransitionCurlDown animations:^(void) {
-        self.date = [self lastMonth:self.date];
+        self.date = [self.date lastMonth];
     } completion:nil];
 }
 
 - (void)nexAction {
     [UIView transitionWithView:self duration:0.5 options:UIViewAnimationOptionTransitionCurlUp animations:^(void) {
-        self.date = [self nextMonth:self.date];
+        self.date = [self.date nextMonth];
     } completion:nil];
 }
 
-#pragma mark - date
-
-- (NSInteger)day:(NSDate *)date{
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
-    return [components day];
-}
-
-
-- (NSInteger)month:(NSDate *)date{
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
-    return [components month];
-}
-
-- (NSInteger)year:(NSDate *)date{
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
-    return [components year];
-}
-
-
-- (NSInteger)firstWeekdayInThisMonth:(NSDate *)date{
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    [calendar setFirstWeekday:1];//1.Sun. 2.Mon. 3.Thes. 4.Wed. 5.Thur. 6.Fri. 7.Sat.
-    NSDateComponents *comp = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
-    [comp setDay:1];
-    NSDate *firstDayOfMonthDate = [calendar dateFromComponents:comp];
-    
-    NSUInteger firstWeekday = [calendar ordinalityOfUnit:NSCalendarUnitWeekday inUnit:NSCalendarUnitWeekOfMonth forDate:firstDayOfMonthDate];
-    return firstWeekday - 1;
-}
-
-- (NSInteger)totaldaysInThisMonth:(NSDate *)date{
-    NSRange totaldaysInMonth = [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:date];
-    return totaldaysInMonth.length;
-}
-
-- (NSInteger)totaldaysInMonth:(NSDate *)date{
-    NSRange daysInLastMonth = [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:date];
-    return daysInLastMonth.length;
-}
-
-- (NSDate *)lastMonth:(NSDate *)date{
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-    dateComponents.month = -1;
-    NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:date options:0];
-    return newDate;
-}
-
-- (NSDate*)nextMonth:(NSDate *)date{
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-    dateComponents.month = +1;
-    NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:date options:0];
-    return newDate;
-}
-
+#pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     XRCalendarHeaderView *headerView = [XRCalendarHeaderView viewWithCollectionView:collectionView forIndexPath:indexPath];
-    headerView.title = [NSString stringWithFormat:@"%.2ld-%li",(long)[self month:self.date],(long)[self year:self.date]];
+    headerView.title = [NSString stringWithFormat:@"%.2ld-%li",(long)[self.date month],(long)[self.date year]];
     headerView.previousBlock = ^{
         [self previouseAction];
     };
@@ -158,67 +123,69 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 7 * 5;
+    NSInteger daysInThisMonth = [self.date totaldaysInMonth];
+    NSInteger firstWeekday = [self.date firstWeekdayInThisMonth];
+    if ((daysInThisMonth + firstWeekday) > 7 * 5) {
+        return 7 * 6;
+    } else {
+        return 7 * 5;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     XRCalendarCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"XRCalendarCell" forIndexPath:indexPath];
+    cell.style = self.style;
     
-    NSInteger daysInThisMonth = [self totaldaysInMonth:self.date];
-    NSInteger firstWeekday = [self firstWeekdayInThisMonth:self.date];
+    NSInteger daysInThisMonth = [self.date totaldaysInMonth];
+    NSInteger firstWeekday = [self.date firstWeekdayInThisMonth];
     
     if (indexPath.row < firstWeekday || indexPath.row > firstWeekday + daysInThisMonth - 1) {
-        cell.text = @"";
-    }else{
-        NSInteger day = indexPath.row - firstWeekday + 1;
-        cell.text = [NSString stringWithFormat:@"%li",(long)day];
+        cell.state = XRCalendarItemNormalState;
+        cell.date = nil;
+        cell.festivalText = @"";
+        cell.exchangeType = XRCalendarExchangeNoneType;
+    } else {
+        NSInteger days = indexPath.row - firstWeekday;
+        NSDate *date = [[self.date firstDayOfThisMonth] nextDay:days];
         
-        NSInteger today_year = [self year:self.today];
-        NSInteger today_month = [self month:self.today];
-        NSInteger today_day = [self day:self.today];
+        if ([date isEqualToDate:self.selectedDate]) {
+            cell.state = XRCalendarItemSelectedState;
+        } else {
+            if ([self.delegate respondsToSelector:@selector(calendarPicker:itemStateWithDate:)]) {
+                cell.state = [self.delegate calendarPicker:self itemStateWithDate:date];
+            } else {
+                cell.state = XRCalendarItemNormalState;
+            }
+        }
         
-        NSInteger date_year = [self year:self.date];
-        NSInteger date_month = [self month:self.date];
-        NSInteger date_day = [self day:self.date];
-        if (today_year == date_year && today_month == date_month && today_day == date_day && day == today_day) {
-            NSLog(@"isEqualToDate");
-            cell.titleBtn.highlighted = YES;
-        }else {
-            cell.titleBtn.highlighted = NO;
+        cell.date = date;
+        
+        if ([self.delegate respondsToSelector:@selector(calendarPicker:festivalWithDate:)]) {
+            cell.festivalText = [self.delegate calendarPicker:self festivalWithDate:date];
+        } else {
+            cell.festivalText = @"";
+        }
+        
+        if ([self.delegate respondsToSelector:@selector(calendarPicker:exchangeTypeWithDate:)]) {
+            cell.exchangeType = [self.delegate calendarPicker:self exchangeTypeWithDate:date];
+        } else {
+            cell.exchangeType = XRCalendarExchangeNoneType;
         }
     }
     return cell;
 }
 
+#pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     XRCalendarCell *cell = (XRCalendarCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    cell.selected = YES;
     
-    NSInteger date_year = [self year:self.date];
-    NSInteger date_month = [self month:self.date];
-    NSInteger date_day = cell.text.intValue;
+    if ([cell.date isEqualToDate:self.selectedDate] || cell.state == XRCalendarItemDisableState) return;
     
-    NSString *strDate = [NSString stringWithFormat:@"%04d-%02d-%02d",(int)date_year,(int)date_month,(int)date_day];
-    if (self.didSelectedDate) {
-        self.didSelectedDate(strDate);
+    if (self.didSelectedDate && cell.date) {
+        self.selectedDate = cell.date;
+        [self.collectionView reloadData];
+        self.didSelectedDate(cell.date);
     }
 }
-
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    XRCalendarCell *cell = (XRCalendarCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    cell.selected = YES;
-}
-
-
-
-
-//- (void)layoutSubviews {
-//    [super layoutSubviews];
-//    
-//    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.top.bottom.equalTo(@0);
-//    }];
-//    
-//}
 
 @end

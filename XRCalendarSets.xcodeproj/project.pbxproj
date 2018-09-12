@@ -34,6 +34,7 @@
 		1BC417C120BCFBAA00EFAAE4 /* XRCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417BF20BCFBAA00EFAAE4 /* XRCalendarView.m */; };
 		1BC417C420BCFBF700EFAAE4 /* XRCalendarWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417C320BCFBF700EFAAE4 /* XRCalendarWeekViewController.m */; };
 		1BC417C720BD180F00EFAAE4 /* XRWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417C620BD180F00EFAAE4 /* XRWeekDayView.m */; };
+		69581C0A2147763200D2A152 /* XRCalendarPickStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 69581C092147763200D2A152 /* XRCalendarPickStyle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,8 @@
 		1BC417C320BCFBF700EFAAE4 /* XRCalendarWeekViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRCalendarWeekViewController.m; sourceTree = "<group>"; };
 		1BC417C520BD180F00EFAAE4 /* XRWeekDayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRWeekDayView.h; sourceTree = "<group>"; };
 		1BC417C620BD180F00EFAAE4 /* XRWeekDayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRWeekDayView.m; sourceTree = "<group>"; };
+		69581C082147763200D2A152 /* XRCalendarPickStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRCalendarPickStyle.h; sourceTree = "<group>"; };
+		69581C092147763200D2A152 /* XRCalendarPickStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRCalendarPickStyle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,8 @@
 				1BC417B720BCF94B00EFAAE4 /* XRCalendarPicker.m */,
 				1BC417B420BCF94B00EFAAE4 /* XRCalendarHeaderView.h */,
 				1BC417B620BCF94B00EFAAE4 /* XRCalendarHeaderView.m */,
+				69581C082147763200D2A152 /* XRCalendarPickStyle.h */,
+				69581C092147763200D2A152 /* XRCalendarPickStyle.m */,
 			);
 			path = XRCalendarPicker;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				1BC4175B20BCF4C500EFAAE4 /* main.m in Sources */,
 				1BC4174D20BCF4C400EFAAE4 /* AppDelegate.m in Sources */,
 				1BC417AE20BCF7F100EFAAE4 /* MASViewAttribute.m in Sources */,
+				69581C0A2147763200D2A152 /* XRCalendarPickStyle.m in Sources */,
 				1BC417BD20BCF9C500EFAAE4 /* XRCanlendarPickerViewController.m in Sources */,
 				1BC417AC20BCF7F100EFAAE4 /* MASConstraint.m in Sources */,
 				1BC4178220BCF54800EFAAE4 /* XRFeatureIndexModel.m in Sources */,

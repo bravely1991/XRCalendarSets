@@ -9,7 +9,9 @@
 #import "XRCanlendarPickerViewController.h"
 #import "XRCalendarPicker.h"
 
-@interface XRCanlendarPickerViewController ()
+#import "NSDate+Category.h"
+
+@interface XRCanlendarPickerViewController () <XRCalendarPickerDelegate>
 
 @property (nonatomic, strong) XRCalendarPicker *calendar;
 
@@ -19,33 +21,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.view.backgroundColor = [UIColor whiteColor];
 
-    self.calendar = [[XRCalendarPicker alloc] initWithFrame:CGRectMake(0, 0, 320, 350)];
+    XRCalendarPickStyle *style = [[XRCalendarPickStyle alloc] init];
+    style.selectedBgColor = [UIColor redColor];
+    style.headerHeight = 60;
+    
+    self.calendar = [[XRCalendarPicker alloc] initWithFrame:CGRectMake(0, 0, 320, 420)];
+    self.calendar.delegate = self;
+    self.calendar.style = style;
     self.calendar.center = self.view.center;
-    self.calendar.today = [NSDate date];
-    self.calendar.date = [NSDate date];
     [self.view addSubview:self.calendar];
     
-    [self.calendar setDidSelectedDate:^(NSString *strDate) {
-        NSLog(@"strDate:%@",strDate);
+    [self.calendar setDidSelectedDate:^(NSDate *selectedDate) {
+        NSLog(@"selectedDate: %@",selectedDate);
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - XRCalendarPickerDelegate
+- (XRCalendarExchangeType)calendarPicker:(XRCalendarPicker *)picker exchangeTypeWithDate:(NSDate *)date {
+    if ([[[NSDate date] nextDay:11] isEqualDay:date] || [[[NSDate date] nextDay:12] isEqualDay:date] || [[[NSDate date] nextDay:13] isEqualDay:date]) {
+        return XRCalendarExchangeRestType;
+    } else if ([[[NSDate date] nextDay:14] isEqualDay:date] || [[[NSDate date] nextDay:15] isEqualDay:date]) {
+        return XRCalendarExchangeWorkType;
+    } else {
+        return XRCalendarExchangeNoneType;
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSString *)calendarPicker:(XRCalendarPicker *)picker festivalWithDate:(NSDate *)date {
+    if ([[[NSDate date] nextDay:11] isEqualDay:date]) {
+        return @"中秋节";
+    } else {
+        return @"";
+    }
 }
-*/
+
+- (XRCalendarItemState)calendarPicker:(XRCalendarPicker *)picker itemStateWithDate:(NSDate *)date {
+    if ([date isEqualDay:[[NSDate date] nextDay:5]]) {
+        return XRCalendarItemDisableState;
+    } else {
+        return XRCalendarItemNormalState;
+    }
+}
 
 @end

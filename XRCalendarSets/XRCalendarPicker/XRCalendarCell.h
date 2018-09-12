@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "XRCalendarPickStyle.h"
+
 @interface XRCalendarCell : UICollectionViewCell
 
-@property (nonatomic, copy) NSString *text;
+@property (nonatomic, strong) XRCalendarPickStyle *style;
 
-@property (nonatomic, strong) UIButton *titleBtn;
+@property (nonatomic, assign) XRCalendarItemState state;
+
+@property (nonatomic, strong) NSDate *date;
+
+@property (nonatomic, copy) NSString *festivalText;
+@property (nonatomic, assign) XRCalendarExchangeType exchangeType;
 
 @end
