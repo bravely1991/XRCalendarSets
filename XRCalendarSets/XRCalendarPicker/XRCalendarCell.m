@@ -9,7 +9,7 @@
 #import "XRCalendarCell.h"
 #import "Masonry.h"
 
-#import "NSDate+Category.h"
+#import "NSDate+XRCategory.h"
 
 @interface XRCalendarCell ()
 
@@ -50,8 +50,8 @@
 }
 
 - (void)setDate:(NSDate *)date {
-    _date = date;
-
+    [super setDate:date];
+    
     self.titleLabel.text = date ? [NSString stringWithFormat:@"%ld", date.day] : @"";
     self.titleLabel.font = self.style.dateFont;
     self.disableImageView.hidden = self.state != XRCalendarItemDisableState;
@@ -72,7 +72,8 @@
 }
 
 - (void)setFestivalText:(NSString *)festivalText {
-    _festivalText = [festivalText copy];
+    [super setFestivalText:festivalText];
+    
     self.festivalLabel.text = festivalText;
     
     self.festivalLabel.textColor = self.state == XRCalendarItemSelectedState ? self.style.festivalSelectedColor : self.style.festivalNormalColor;
@@ -80,7 +81,7 @@
 }
 
 - (void)setExchangeType:(XRCalendarExchangeType)exchangeType {
-    _exchangeType = exchangeType;
+    [super setExchangeType:exchangeType];
     
     switch (exchangeType) {
         case XRCalendarExchangeNoneType:

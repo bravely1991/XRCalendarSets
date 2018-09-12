@@ -10,7 +10,7 @@
 #import "XRCalendarHeaderView.h"
 #import "XRCalendarCell.h"
 
-#import "NSDate+Category.h"
+#import "NSDate+XRCategory.h"
 
 @interface XRCalendarPicker ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -54,10 +54,9 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.collectionView.allowsSelection = YES;
-    self.collectionView.allowsMultipleSelection = NO;
     self.collectionView.showsVerticalScrollIndicator = NO;
-    [self.collectionView registerClass:[XRCalendarCell class]forCellWithReuseIdentifier:@"XRCalendarCell"];
-    [self.collectionView registerClass:[XRCalendarHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"XRCalendarHeaderView"];
+    [self.collectionView registerClass:self.style.cellClass forCellWithReuseIdentifier:NSStringFromClass(self.style.cellClass)];
+    [self.collectionView registerClass:self.style.headerClass forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(self.style.headerClass)];
     [self addSubview:self.collectionView];
     
     [self addSwipe];
@@ -85,11 +84,14 @@
 
 - (void)setStyle:(XRCalendarPickStyle *)style {
     _style = style;
+    if (!style) return;
     
     CGFloat itemWidth = self.bounds.size.width / 7;
     CGFloat itemHeight = (self.bounds.size.height - self.style.headerHeight) / 6;
     self.layout.itemSize = CGSizeMake(itemWidth, itemHeight);
     self.layout.headerReferenceSize = CGSizeMake(self.bounds.size.width, self.style.headerHeight);
+    [self.collectionView registerClass:self.style.cellClass forCellWithReuseIdentifier:NSStringFromClass(self.style.cellClass)];
+    [self.collectionView registerClass:self.style.headerClass forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(self.style.headerClass)];
 }
 
 #pragma mark - 翻页
@@ -111,7 +113,7 @@
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    XRCalendarHeaderView *headerView = [XRCalendarHeaderView viewWithCollectionView:collectionView forIndexPath:indexPath];
+    XRCalendarFatherHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(self.style.headerClass) forIndexPath:indexPath];
     headerView.title = [NSString stringWithFormat:@"%.2ld-%li",(long)[self.date month],(long)[self.date year]];
     headerView.previousBlock = ^{
         [self previouseAction];
@@ -133,7 +135,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    XRCalendarCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"XRCalendarCell" forIndexPath:indexPath];
+    XRCalendarFatherCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(self.style.cellClass) forIndexPath:indexPath];
     cell.style = self.style;
     
     NSInteger daysInThisMonth = [self.date totaldaysInMonth];
@@ -177,7 +179,7 @@
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    XRCalendarCell *cell = (XRCalendarCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    XRCalendarFatherCell *cell = (XRCalendarFatherCell *)[collectionView cellForItemAtIndexPath:indexPath];
     
     if ([cell.date isEqualToDate:self.selectedDate] || cell.state == XRCalendarItemDisableState) return;
     

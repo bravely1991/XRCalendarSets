@@ -15,7 +15,7 @@
 		1BC4175B20BCF4C500EFAAE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4175A20BCF4C500EFAAE4 /* main.m */; };
 		1BC4178220BCF54800EFAAE4 /* XRFeatureIndexModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4178020BCF54800EFAAE4 /* XRFeatureIndexModel.m */; };
 		1BC4178520BCF55500EFAAE4 /* XRFeatureIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4178420BCF55500EFAAE4 /* XRFeatureIndexViewController.m */; };
-		1BC4178920BCF7CC00EFAAE4 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4178820BCF7CC00EFAAE4 /* NSDate+Category.m */; };
+		1BC4178920BCF7CC00EFAAE4 /* NSDate+XRCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4178820BCF7CC00EFAAE4 /* NSDate+XRCategory.m */; };
 		1BC417A520BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4178D20BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		1BC417A620BCF7F100EFAAE4 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4179620BCF7F100EFAAE4 /* ViewController+MASAdditions.m */; };
 		1BC417A720BCF7F100EFAAE4 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4179A20BCF7F100EFAAE4 /* MASCompositeConstraint.m */; };
@@ -35,6 +35,9 @@
 		1BC417C420BCFBF700EFAAE4 /* XRCalendarWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417C320BCFBF700EFAAE4 /* XRCalendarWeekViewController.m */; };
 		1BC417C720BD180F00EFAAE4 /* XRWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC417C620BD180F00EFAAE4 /* XRWeekDayView.m */; };
 		69581C0A2147763200D2A152 /* XRCalendarPickStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 69581C092147763200D2A152 /* XRCalendarPickStyle.m */; };
+		69581C372148C1AA00D2A152 /* XRCalendarFatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69581C362148C1AA00D2A152 /* XRCalendarFatherCell.m */; };
+		69581C3A2148C6B800D2A152 /* XRCalendarFatherHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69581C392148C6B800D2A152 /* XRCalendarFatherHeaderView.m */; };
+		69581C412148D5A300D2A152 /* XRTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69581C3F2148D5A300D2A152 /* XRTestCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +74,8 @@
 		1BC4178120BCF54800EFAAE4 /* XRFeatureIndexModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRFeatureIndexModel.h; sourceTree = "<group>"; };
 		1BC4178320BCF55500EFAAE4 /* XRFeatureIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRFeatureIndexViewController.h; sourceTree = "<group>"; };
 		1BC4178420BCF55500EFAAE4 /* XRFeatureIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRFeatureIndexViewController.m; sourceTree = "<group>"; };
-		1BC4178720BCF7CC00EFAAE4 /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
-		1BC4178820BCF7CC00EFAAE4 /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
+		1BC4178720BCF7CC00EFAAE4 /* NSDate+XRCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+XRCategory.h"; sourceTree = "<group>"; };
+		1BC4178820BCF7CC00EFAAE4 /* NSDate+XRCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+XRCategory.m"; sourceTree = "<group>"; };
 		1BC4178C20BCF7F100EFAAE4 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		1BC4178D20BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		1BC4178E20BCF7F100EFAAE4 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -115,6 +118,12 @@
 		1BC417C620BD180F00EFAAE4 /* XRWeekDayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRWeekDayView.m; sourceTree = "<group>"; };
 		69581C082147763200D2A152 /* XRCalendarPickStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRCalendarPickStyle.h; sourceTree = "<group>"; };
 		69581C092147763200D2A152 /* XRCalendarPickStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRCalendarPickStyle.m; sourceTree = "<group>"; };
+		69581C352148C1AA00D2A152 /* XRCalendarFatherCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRCalendarFatherCell.h; sourceTree = "<group>"; };
+		69581C362148C1AA00D2A152 /* XRCalendarFatherCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRCalendarFatherCell.m; sourceTree = "<group>"; };
+		69581C382148C6B800D2A152 /* XRCalendarFatherHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRCalendarFatherHeaderView.h; sourceTree = "<group>"; };
+		69581C392148C6B800D2A152 /* XRCalendarFatherHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRCalendarFatherHeaderView.m; sourceTree = "<group>"; };
+		69581C3F2148D5A300D2A152 /* XRTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRTestCell.m; sourceTree = "<group>"; };
+		69581C402148D5A300D2A152 /* XRTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRTestCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +177,7 @@
 				1BC4178A20BCF7F100EFAAE4 /* Vender */,
 				1BC4178620BCF7B900EFAAE4 /* Category */,
 				1BC4177E20BCF53700EFAAE4 /* Model */,
-				1BC4177F20BCF53700EFAAE4 /* View */,
+				69581C3E2148D5A300D2A152 /* View */,
 				1BC4177D20BCF51400EFAAE4 /* Controller */,
 				1BC4174B20BCF4C400EFAAE4 /* AppDelegate.h */,
 				1BC4174C20BCF4C400EFAAE4 /* AppDelegate.m */,
@@ -206,18 +215,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1BC4177F20BCF53700EFAAE4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		1BC4178620BCF7B900EFAAE4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				1BC4178720BCF7CC00EFAAE4 /* NSDate+Category.h */,
-				1BC4178820BCF7CC00EFAAE4 /* NSDate+Category.m */,
+				1BC4178720BCF7CC00EFAAE4 /* NSDate+XRCategory.h */,
+				1BC4178820BCF7CC00EFAAE4 /* NSDate+XRCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -265,14 +267,18 @@
 		1BC417B120BCF94B00EFAAE4 /* XRCalendarPicker */ = {
 			isa = PBXGroup;
 			children = (
-				1BC417B520BCF94B00EFAAE4 /* XRCalendarCell.h */,
-				1BC417B220BCF94B00EFAAE4 /* XRCalendarCell.m */,
 				1BC417B320BCF94B00EFAAE4 /* XRCalendarPicker.h */,
 				1BC417B720BCF94B00EFAAE4 /* XRCalendarPicker.m */,
-				1BC417B420BCF94B00EFAAE4 /* XRCalendarHeaderView.h */,
-				1BC417B620BCF94B00EFAAE4 /* XRCalendarHeaderView.m */,
 				69581C082147763200D2A152 /* XRCalendarPickStyle.h */,
 				69581C092147763200D2A152 /* XRCalendarPickStyle.m */,
+				69581C352148C1AA00D2A152 /* XRCalendarFatherCell.h */,
+				69581C362148C1AA00D2A152 /* XRCalendarFatherCell.m */,
+				69581C382148C6B800D2A152 /* XRCalendarFatherHeaderView.h */,
+				69581C392148C6B800D2A152 /* XRCalendarFatherHeaderView.m */,
+				1BC417B520BCF94B00EFAAE4 /* XRCalendarCell.h */,
+				1BC417B220BCF94B00EFAAE4 /* XRCalendarCell.m */,
+				1BC417B420BCF94B00EFAAE4 /* XRCalendarHeaderView.h */,
+				1BC417B620BCF94B00EFAAE4 /* XRCalendarHeaderView.m */,
 			);
 			path = XRCalendarPicker;
 			sourceTree = "<group>";
@@ -286,6 +292,15 @@
 				1BC417C620BD180F00EFAAE4 /* XRWeekDayView.m */,
 			);
 			path = XRCalendarWeek;
+			sourceTree = "<group>";
+		};
+		69581C3E2148D5A300D2A152 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69581C402148D5A300D2A152 /* XRTestCell.h */,
+				69581C3F2148D5A300D2A152 /* XRTestCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,17 +436,19 @@
 			files = (
 				1BC417C420BCFBF700EFAAE4 /* XRCalendarWeekViewController.m in Sources */,
 				1BC417BA20BCF94B00EFAAE4 /* XRCalendarPicker.m in Sources */,
+				69581C372148C1AA00D2A152 /* XRCalendarFatherCell.m in Sources */,
 				1BC417AD20BCF7F100EFAAE4 /* MASViewConstraint.m in Sources */,
 				1BC4175020BCF4C400EFAAE4 /* ViewController.m in Sources */,
 				1BC417A820BCF7F100EFAAE4 /* MASConstraintMaker.m in Sources */,
 				1BC417B920BCF94B00EFAAE4 /* XRCalendarHeaderView.m in Sources */,
 				1BC4178520BCF55500EFAAE4 /* XRFeatureIndexViewController.m in Sources */,
 				1BC417A620BCF7F100EFAAE4 /* ViewController+MASAdditions.m in Sources */,
+				69581C3A2148C6B800D2A152 /* XRCalendarFatherHeaderView.m in Sources */,
 				1BC417C720BD180F00EFAAE4 /* XRWeekDayView.m in Sources */,
 				1BC417A520BCF7F100EFAAE4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				1BC417C120BCFBAA00EFAAE4 /* XRCalendarView.m in Sources */,
 				1BC417A720BCF7F100EFAAE4 /* MASCompositeConstraint.m in Sources */,
-				1BC4178920BCF7CC00EFAAE4 /* NSDate+Category.m in Sources */,
+				1BC4178920BCF7CC00EFAAE4 /* NSDate+XRCategory.m in Sources */,
 				1BC417B820BCF94B00EFAAE4 /* XRCalendarCell.m in Sources */,
 				1BC417A920BCF7F100EFAAE4 /* MASLayoutConstraint.m in Sources */,
 				1BC417AB20BCF7F100EFAAE4 /* View+MASAdditions.m in Sources */,
@@ -440,6 +457,7 @@
 				1BC4174D20BCF4C400EFAAE4 /* AppDelegate.m in Sources */,
 				1BC417AE20BCF7F100EFAAE4 /* MASViewAttribute.m in Sources */,
 				69581C0A2147763200D2A152 /* XRCalendarPickStyle.m in Sources */,
+				69581C412148D5A300D2A152 /* XRTestCell.m in Sources */,
 				1BC417BD20BCF9C500EFAAE4 /* XRCanlendarPickerViewController.m in Sources */,
 				1BC417AC20BCF7F100EFAAE4 /* MASConstraint.m in Sources */,
 				1BC4178220BCF54800EFAAE4 /* XRFeatureIndexModel.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "XRCalendarView.h"
 #import "Masonry.h"
-#import "NSDate+Category.h"
+#import "NSDate+XRCategory.h"
 #import "XRWeekDayView.h"
 
 

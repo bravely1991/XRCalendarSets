@@ -6,19 +6,9 @@
 //  Copyright © 2018年 null. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "XRCalendarFatherCell.h"
 
-#import "XRCalendarPickStyle.h"
+@interface XRCalendarCell : XRCalendarFatherCell
 
-@interface XRCalendarCell : UICollectionViewCell
-
-@property (nonatomic, strong) XRCalendarPickStyle *style;
-
-@property (nonatomic, assign) XRCalendarItemState state;
-
-@property (nonatomic, strong) NSDate *date;
-
-@property (nonatomic, copy) NSString *festivalText;
-@property (nonatomic, assign) XRCalendarExchangeType exchangeType;
 
 @end

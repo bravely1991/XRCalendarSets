@@ -8,13 +8,18 @@
 
 #import "XRCalendarPickStyle.h"
 
+#import "XRCalendarCell.h"
+#import "XRCalendarHeaderView.h"
+
 @implementation XRCalendarPickStyle
 
 - (instancetype)init {
     if (self = [super init]) {
         
-        self.headerHeight = 60;
+        self.cellClass = [XRCalendarCell class];
+        self.headerClass = [XRCalendarHeaderView class];
         
+        self.headerHeight = 60;
         self.showToday = NO;
         self.todayColor = [UIColor blueColor];
         self.todayFont = [UIFont systemFontOfSize:16];

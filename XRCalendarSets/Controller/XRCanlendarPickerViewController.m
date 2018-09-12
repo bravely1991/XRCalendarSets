@@ -9,7 +9,9 @@
 #import "XRCanlendarPickerViewController.h"
 #import "XRCalendarPicker.h"
 
-#import "NSDate+Category.h"
+#import "NSDate+XRCategory.h"
+
+#import "XRTestCell.h"
 
 @interface XRCanlendarPickerViewController () <XRCalendarPickerDelegate>
 
@@ -27,6 +29,8 @@
     XRCalendarPickStyle *style = [[XRCalendarPickStyle alloc] init];
     style.selectedBgColor = [UIColor redColor];
     style.headerHeight = 60;
+    // 1.测试自定义cell
+    style.cellClass = [XRTestCell class];
     
     self.calendar = [[XRCalendarPicker alloc] initWithFrame:CGRectMake(0, 0, 320, 420)];
     self.calendar.delegate = self;

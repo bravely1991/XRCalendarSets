@@ -6,9 +6,9 @@
 //  Copyright © 2018年 brave. All rights reserved.
 //
 
-#import "NSDate+Category.h"
+#import "NSDate+XRCategory.h"
 
-@implementation NSDate (Category)
+@implementation NSDate (XRCategory)
 
 + (NSDate *)firstDayInfoOfWeek {
     NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];

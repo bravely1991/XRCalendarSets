@@ -24,6 +24,9 @@ typedef NS_ENUM(NSUInteger, XRCalendarItemState) {
 
 @property (nonatomic, assign) CGFloat headerHeight;
 
+@property (nonatomic, strong) Class cellClass;
+@property (nonatomic, strong) Class headerClass;
+
 @property (nonatomic, assign) BOOL showToday;
 @property (nonatomic, strong) UIColor *todayColor;
 @property (nonatomic, strong) UIFont *todayFont;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDate (Category)
+@interface NSDate (XRCategory)
 
 + (NSDate *)firstDayInfoOfWeek;
 - (NSDate *)nextDay:(NSInteger)day;

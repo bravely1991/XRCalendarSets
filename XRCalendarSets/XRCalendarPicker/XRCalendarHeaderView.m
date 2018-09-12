@@ -22,11 +22,6 @@
 
 @implementation XRCalendarHeaderView
 
-+ (instancetype)viewWithCollectionView:(UICollectionView *)collectionView forIndexPath:(NSIndexPath *)indexPath {
-    XRCalendarHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"XRCalendarHeaderView" forIndexPath:indexPath];
-    return headerView;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor redColor];
@@ -81,9 +76,8 @@
     }
 }
 
-
 - (void)setTitle:(NSString *)title {
-    _title = title;
+    [super setTitle:title];
     self.monthLabel.text = title;
 }
 
